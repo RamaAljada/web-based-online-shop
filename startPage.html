@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RS Shop | Start Page</title>
+<style>
+    body {
+        font-family: 'Tajawal', sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: url('background.png') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-container {
+        background: rgba(255, 255, 255, 0.9); 
+            padding: 50px 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        max-width: 500px;
+    }
+
+    .main-container h1 {
+        color: #A8407B;
+        font-size: 48px;
+        margin: 0 0 20px 0;
+    }
+
+    .main-container p {
+        color: #A8407B;
+        font-size: 20px;
+        margin: 0 0 30px 0;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .button-container a {
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background: #A8407B;
+        transition: 0.3s;
+    }
+
+    .button-container a:hover {
+        background: #8D3469;
+    }
+
+    @media (max-width: 500px) {
+        .main-container h1 { font-size: 36px; }
+        .main-container p { font-size: 16px; }
+        .button-container { flex-direction: column; gap: 15px; }
+        .button-container a { width: 100%; text-align: center; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>RS Shop</h1>
+        <p>The best online store for quick shopping</p>
+        <div class="button-container">
+            <a href="SignUp.html">Sign Up</a>
+            <a href="Login.html">Login</a>
+        </div>
+    </div>
+
+</body>
+</html>

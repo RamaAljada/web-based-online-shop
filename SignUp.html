@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | RS Shop</title>
+<style>
+body {
+    font-family:'Tajawal', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.signup-container {
+    width:400px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.signup-container h2 { color:#A8407B; margin-bottom:20px; text-align:center; }
+.input-group { margin-bottom:15px; }
+input, select { width:100%; padding:10px; border-radius:10px; border:1px solid #F3D2DF; }
+button { width:100%; padding:15px; background:#A8407B; color:white; border:none; border-radius:10px; cursor:pointer; font-size:16pt; }
+button:hover { background:#8D3469; }
+p { text-align:center; margin-top:10px; }
+a { color:#A8407B; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.error { color:red; text-align:center; margin-bottom:15px; }
+.success { color:green; text-align:center; margin-bottom:15px; }
+</style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h2> Create New Account</h2>
+    
+    <!-- Message placeholder -->
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error"><?= htmlspecialchars($_GET['error']) ?></div>
+    <?php elseif (isset($_GET['success'])): ?>
+        <div class="success"><?= htmlspecialchars($_GET['success']) ?></div>
+    <?php endif; ?>
+
+    <form action="process_signup.php" method="post">
+        <div class="input-group">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-group">
+            <select name="country_code" required>
+                <option value="+962">Jordan +962</option>
+                <option value="+966">Saudi Arabia +966</option>
+                <option value="+971">UAE +971</option>
+                <option value="+965">Kuwait +965</option>
+                <option value="+973">Bahrain +973</option>
+                <option value="+974">Qatar +974</option>
+                <option value="+20">Egypt +20</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <input type="text" name="phone" placeholder="Phone Number" required>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Create Account</button>
+    </form>
+    <p>Already have an account? <a href="Login.html">Login Here</a></p>
+</div>
+
+</body>
+</html>

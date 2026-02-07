@@ -1,0 +1,173 @@
+<?php 
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | RS Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+body {
+    font-family:'Tajawal', sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+
+.login-container {
+    width:400px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+    color:#A8407B;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.input-group {
+    margin-bottom:15px;
+}
+
+input {
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #F3D2DF;
+}
+
+.login-btn { 
+    width:100%;
+    padding:15px;
+    background:#A8407B;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16pt;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background:#8D3469;
+}
+
+.delete-btn {
+    width:100%;
+    padding:15px;
+    background:#A8407B; 
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16pt;
+    margin-top: 5px; 
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background:#8D3469; 
+}
+
+.update-btn {
+    width:100%;
+    padding:15px;
+    background:#A8407B;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16pt;
+    margin-top: 5px; 
+    transition: background-color 0.3s;
+}
+
+.update-btn:hover {
+    background:#8D3469;
+}
+
+p {
+    text-align:center;
+    margin-top:10px;
+}
+
+a {
+    color:#A8407B;
+    text-decoration:none;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+.error {
+    color:red;
+    text-align:center;
+    margin-bottom:15px;
+    font-weight: bold;
+}
+.success {
+    color:#28a745; 
+    text-align:center;
+    margin-bottom:15px;
+    font-weight: bold;
+}
+</style>
+<script>
+    function confirmDelete() {
+        return confirm("⚠️ Warning: You’re about to delete your account permanently. This action can’t be undone. Are you sure?");
+    }
+    
+    function confirmUpdate() {
+        return confirm("Do you want to proceed to the account update? You will need to enter your current email and password to verify your identity.");
+    }
+</script>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login / Account Actions</h2>
+    
+    <?php if (isset($_GET['error'])): ?>
+        <div class="error"><?= htmlspecialchars($_GET['error']) ?></div>
+    <?php endif; ?>
+    
+    <?php if (isset($_GET['success'])): ?>
+        <div class="success"><?= htmlspecialchars($_GET['success']) ?></div>
+    <?php endif; ?>
+
+    <form method="post">
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        
+        <button type="submit" formaction="process_login.php" class="login-btn">Login</button>
+        
+        <button type="submit" formaction="account_settings.php" onclick="return confirmUpdate();" class="update-btn">
+            <i class="fas fa-user-edit"></i> Update Account
+        </button>
+
+        <button type="submit" formaction="process_delete.php" onclick="return confirmDelete();" class="delete-btn">
+            <i class="fas fa-trash-alt"></i> Delete Account
+        </button>
+        
+    </form>
+    
+    <p>Don't have an account? <a href="SignUp.html">Sign Up Here</a></p>
+</div>
+
+</body>
+</html>
