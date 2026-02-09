@@ -7,7 +7,7 @@ This project is a full-featured web-based online shop developed using HTML, CSS,
 ![Create New Account](images/CreateNewAccount.png)
 
 ### Login & Account Actions
-![Login Actions Account](images/LoginActions_Account.png)
+![Login Actions Account](images/LoginActionsAccount.png)
 
 ### Alert Messages
 ![Alert](images/alert.png)
