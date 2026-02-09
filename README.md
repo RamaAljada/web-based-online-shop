@@ -1,6 +1,24 @@
 # Project Overview
 This project is a full-featured web-based online shop developed using HTML, CSS, JavaScript, PHP, and MySQL, with phpMyAdmin for database management. It follows a client-server architecture, where the frontend handles user interaction and presentation, while the backend manages business logic, database operations, and data security.
 
+## Screenshots
+
+### Create New Account
+![Create New Account](images/CreateNewAccount.png)
+
+### Login & Account Actions
+![Login Actions Account](images/LoginActionsAccount.png)
+
+### Alert Messages
+![Alert](images/alert.png)
+
+### Services Page
+![Services](images/Services.png)
+
+### Cart and Checkout
+![Cart and Checkout](images/cart_and_checkout.png)
+
+
 ## Main goals of the project include:
 - User account management
 - Product categorization and browsing
