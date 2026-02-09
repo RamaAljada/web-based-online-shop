@@ -64,17 +64,17 @@ Each layer has a specific role and uses appropriate technologies to ensure a sec
 ## Database Design
 The database has three main tables: **shop**, **categories**, and **items**.
 
-### .1 shop Table
+### .1 Shop Table
 - Stores user accounts  
 - **Columns:** user_id (PK), username, phone, country_code, email (fixed), password (hashed)  
 - **Role:** Link user actions to their account and ensure secure authentication
 
-### .2 categories Table
+### .2 Categories Table
 - Stores product categories  
 - **Columns:** id (PK), name, image  
 - **Role:** Organize products for easier navigation and filtering
 
-### .3 items Table
+### .3 Items Table
 - Stores products  
 - **Columns:** id (PK), category_id (FK references categories.id), name, price, image
 
